@@ -1,0 +1,61 @@
+package com.aupadhyay.cresendo;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+
+/**
+ * Created by aupadhyay on 7/22/16.
+ */
+public class CustomAdapter extends BaseAdapter {
+
+    Context context;
+    int resource;
+    ArrayList<ContestantDetails> contestantList;
+
+    public CustomAdapter(Context context, int resource, ArrayList<ContestantDetails> object)
+    {
+        this.context = context;
+        this.resource = resource;
+        contestantList = object;
+    }
+
+    @Override
+    public int getCount() {
+        return contestantList.size();
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return i;
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return i;
+    }
+
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        View view1 = null;
+
+        view1 = LayoutInflater.from(context).inflate(resource, viewGroup, false);
+
+
+        TextView nameTV = (TextView) view1.findViewById(R.id.CnameTextVew);
+        TextView marksTV = (TextView) view1.findViewById(R.id.CmarksTextView);
+
+        ContestantDetails contestantDetails = contestantList.get(i);
+
+        nameTV.setText(contestantDetails.getName());
+        marksTV.setText(String.valueOf(contestantDetails.getMarks()));
+
+
+        return view1;
+    }
+}

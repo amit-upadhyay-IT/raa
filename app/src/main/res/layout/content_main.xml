@@ -1,0 +1,2283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:background="#85700049"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.aupadhyay.cresendo.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"/>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contestant1LinearLayout"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contestant_number_1"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#9b03830d"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contestant2LinearLayout"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contestant Number 2"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#b28737ff"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks2"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks2"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks2"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks2"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks2"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton2"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView2"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contestant3LinearLayout"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contestant Number 3"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#bcff37d4"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks3"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks3"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks3"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks3"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks3"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton3"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView3"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contestant4LinearLayout"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contestant Number 4"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#bc37ffd0"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks4"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks4"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks4"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks4"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks4"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton4"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView4"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contestant5LinearLayout"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contestant Number 5"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#bcff7d37"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks5"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks5"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks5"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks5"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks5"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton5"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView5"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contestant6LinearLayout"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contestant Number 6"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#bc44ff37"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks6"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks6"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks6"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks6"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks6"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton6"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView6"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contestant7LinearLayout"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contestant Number 7"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#9b03830d"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks7"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks7"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks7"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks7"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks7"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton7"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView7"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contestant8LinearLayout"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contestant Number 8"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#b28737ff"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks8"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks8"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks8"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks8"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks8"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton8"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView8"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contestant9LinearLayout"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contestant Number 9"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#bc37ffd0"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks9"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks9"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks9"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks9"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks9"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton9"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView9"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contestant10LinearLayout"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contestant Number 10"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#bcff7d37"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks10"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks10"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks10"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks10"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks10"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton10"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView10"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contestant11LinearLayout"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contestant Number 11"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#9b03830d"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks11"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks11"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks11"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks11"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks11"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton11"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView11"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contestant12LinearLayout"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contestant Number 12"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#bc067b5f"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks12"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks12"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks12"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks12"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks12"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton12"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView12"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contestant13LinearLayout"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contestant Number 13"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#b28737ff"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks13"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks13"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks13"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks13"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks13"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton13"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView13"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contestant14LinearLayout"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contestant Number 14"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30sp"/>
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardBackgroundColor="#9b03830d"
+                    android:elevation="7dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Language :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/bodyLanguageMarks14"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confidence :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/confidenceMarks14"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Crowd Approval :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/crowdApprovalMarks14"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_weight="1"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Situtation Round :"
+                                android:layout_weight="1"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/situtationMarks14"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Interview Round :"
+                                android:textSize="25sp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/interviewMarks14"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:layout_height="wrap_content"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Total"
+                                android:id="@+id/getTotalButton14"
+                                android:layout_weight=".0005"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/totalTextView14"
+                                android:text="--"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:textSize="30sp"/>
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
